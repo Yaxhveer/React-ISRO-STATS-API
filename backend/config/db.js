@@ -5,17 +5,17 @@ dotenv.config();
 
 const { Pool } = pkg;
 
-const DB_NAME = process.env.DB_NAME
-const DB_USER = process.env.DB_USER
-const DB_PASS = process.env.DB_PASS
-const DB_HOST = process.env.DB_HOST
-const DB_PORT = process.env.DB_PORT
+const DB_NAME = process.env.POSTGRES_DATABASE
+const DB_USER = process.env.POSTGRES_USER
+const DB_PASS = process.env.POSTGRES_PASSWORD
+const DB_HOST = process.env.POSTGRES_HOST
 
 export const masterPool = new Pool({
     user: DB_USER,
     host: DB_HOST,
     password: DB_PASS,
-    port: DB_PORT
+    port: 5432,
+    ssl: true
 });
 
 export const appPool = new Pool({
@@ -23,5 +23,6 @@ export const appPool = new Pool({
     host: DB_HOST,
     database: DB_NAME,
     password: DB_PASS,
-    port: DB_PORT
+    port: 5432,
+    ssl: true
 });

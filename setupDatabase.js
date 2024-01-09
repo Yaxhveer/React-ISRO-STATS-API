@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 
 dotenv.config({ path: './backend/.env' });
 
-const dbName = process.env.DB_NAME;
+const dbName = process.env.POSTGRES_DATABASE;
 const schemaPath = './backend/schema/schema.sql';
 
 const createDatabaseAndSchema = async () => {
