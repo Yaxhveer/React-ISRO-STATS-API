@@ -14,8 +14,7 @@ export const masterPool = new Pool({
     user: DB_USER,
     host: DB_HOST,
     password: DB_PASS,
-    port: 5432,
-    ssl: true
+    port: 5432
 });
 
 export const appPool = new Pool({
@@ -23,6 +22,5 @@ export const appPool = new Pool({
     host: DB_HOST,
     database: DB_NAME,
     password: DB_PASS,
-    port: 5432,
-    ssl: true
+    port: 5432
 });

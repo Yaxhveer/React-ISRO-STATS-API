@@ -1,33 +1,7 @@
 import { Link } from 'react-router-dom';
-import LaunchCard from '../components/launchCard.jsx'
 import { useLaunchData } from '../context/context.jsx';
-
-const Error = () => {
-    return (
-        <div className='text-center text-2xl text-white underline'>
-            Error Occured!
-        </div>
-    )
-}
-
-const AllLaunches = ({ allLaunches }) => {
-
-    return ( 
-        <>
-            <div className='flex flex-wrap justify-around py-5' style={{gap:'32px'}}>
-                {
-                    allLaunches?.map((launch, i) => {
-                        return (
-                            <div id={i}>
-                                <LaunchCard launchData={launch} />
-                            </div>
-                        )
-                    })
-                }
-            </div>
-        </>
-    )
-}
+import Error from '../components/error.jsx';
+import AllLaunches from '../components/allLaunches.jsx';
 
 const HomePage = () => {
 
